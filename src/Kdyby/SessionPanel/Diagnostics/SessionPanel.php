@@ -203,10 +203,15 @@ class SessionPanel extends Nette\Object implements Tracy\IBarPanel
 	 */
 	public static function render($file, $vars)
 	{
-		ob_start();
-		extract($vars);
-		include($file);
-		return ob_get_clean();
+		return call_user_func(function() {
+			ob_start();
+			foreach (func_get_arg(1) as $__k => $__v) {
+				$$__k = $__v;
+			}
+			unset($__k, $__v);
+			require func_get_arg(0);
+			return ob_get_clean();
+		}, $file, $vars);
 	}
 
 
