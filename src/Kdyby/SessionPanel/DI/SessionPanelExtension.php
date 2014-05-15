@@ -29,7 +29,7 @@ if (!class_exists('Tracy\Dumper')) {
 	class_alias('Nette\Diagnostics\Dumper', 'Tracy\Dumper');
 }
 
-if (!class_exists('Tracy\IBarPanel')) {
+if (!interface_exists('Tracy\IBarPanel')) {
 	class_alias('Nette\Diagnostics\IBarPanel', 'Tracy\IBarPanel');
 }
 
