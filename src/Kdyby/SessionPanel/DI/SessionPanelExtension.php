@@ -21,6 +21,26 @@ if (isset(Nette\Loaders\NetteLoader::getInstance()->renamed['Nette\Configurator'
 	class_alias('Nette\Config\Configurator', 'Nette\Configurator');
 }
 
+if (!class_exists('Tracy\Debugger')) {
+	class_alias('Nette\Diagnostics\Debugger', 'Tracy\Debugger');
+}
+
+if (!class_exists('Tracy\Dumper')) {
+	class_alias('Nette\Diagnostics\Dumper', 'Tracy\Dumper');
+}
+
+if (!class_exists('Tracy\IBarPanel')) {
+	class_alias('Nette\Diagnostics\IBarPanel', 'Tracy\IBarPanel');
+}
+
+if (!class_exists('Nette\Utils\DateTime')) {
+	class_alias('Nette\Utils\DateTime', 'Nette\DateTime');
+}
+
+if (!class_exists('Nette\Templating\Helpers')) {
+	class_alias('Latte\Runtime\Filters', 'Nette\Templating\Helpers');
+}
+
 /**
  * @author Jáchym Toušek <enumag@gmail.com>
  */
